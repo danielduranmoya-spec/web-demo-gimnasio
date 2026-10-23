@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danielduranmoya-spec.github.io/web-demo-gimnasio/sitemap.xml

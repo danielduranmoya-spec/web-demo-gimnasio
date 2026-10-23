@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HIERRO 06 · Gimnasio y club de fuerza en Mérida (Badajoz)</title>
+  <meta name="description" content="HIERRO 06, club de fuerza en Mérida: kettlebells, halterofilia, entrenamiento personal y clases dirigidas de 6:30 a 23:00. Prueba 7 días gratis. Concepto de web interactiva 3D de Daniel Durán.">
+  <!-- Demo con negocio ficticio: no se indexa. Para un cliente real, borra esta línea. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0D0E0C">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="media/icono-180.png">
+  <link rel="canonical" href="https://danielduranmoya-spec.github.io/web-demo-gimnasio/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="HIERRO 06">
+  <meta property="og:title" content="HIERRO 06 · Club de fuerza en Mérida">
+  <meta property="og:description" content="Una kettlebell 3D que cae a plomo, un coach 3D que te enseña la técnica y clases desde las 6:30. Prueba 7 días gratis.">
+  <meta property="og:url" content="https://danielduranmoya-spec.github.io/web-demo-gimnasio/">
+  <meta property="og:image" content="https://danielduranmoya-spec.github.io/web-demo-gimnasio/media/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kettlebell negra con el número 24 en verde volt sobre el suelo del club HIERRO 06">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Unbounded:wght@400;600;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="media/clase-poster.jpg" as="image">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- three.js para las escenas 3D (versión fijada) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "HIERRO 06",
+    "description": "Club de fuerza en Mérida: kettlebells, halterofilia, entrenamiento personal y clases dirigidas (concepto de web, negocio ficticio).",
+    "url": "https://danielduranmoya-spec.github.io/web-demo-gimnasio/",
+    "image": "https://danielduranmoya-spec.github.io/web-demo-gimnasio/media/og.jpg",
+    "telephone": "+34600000000",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle del Hierro 6 (dirección ficticia)",
+      "postalCode": "06800",
+      "addressLocality": "Mérida",
+      "addressRegion": "Badajoz",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 38.9126, "longitude": -6.3383 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:30", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "14:00" }
+    ],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Plataformas de halterofilia", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Zona de kettlebells", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Vestuarios con duchas", "value": true }
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "name": "Acceso", "price": "34", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Hierro (sala + clases)", "price": "54", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Coach 1:1", "price": "129", "priceCurrency": "EUR" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Puedo probar el gimnasio antes de apuntarme?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Tienes 7 días gratis con acceso a sala y a todas las clases. Solo hay que reservar por WhatsApp y traer el DNI." } },
+      { "@type": "Question", "name": "Nunca he entrenado con kettlebell, ¿es para mí?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La primera semana haces una valoración y dos clases de técnica en grupos de seis. Empiezas con 8 o 12 kg y subes cuando el coach lo vea." } },
+      { "@type": "Question", "name": "¿Hay permanencia o matrícula?", "acceptedAnswer": { "@type": "Answer", "text": "No hay permanencia ni matrícula. Los pagos trimestral y anual tienen un 10 % y un 20 % de descuento." } },
+      { "@type": "Question", "name": "¿Dónde aparco?", "acceptedAnswer": { "@type": "Answer", "text": "El club tiene 14 plazas para socios y hay aparcamiento libre en las calles de alrededor." } },
+      { "@type": "Question", "name": "¿Qué horario tiene HIERRO 06?", "acceptedAnswer": { "@type": "Answer", "text": "De lunes a viernes de 6:30 a 23:00, sábados de 9:00 a 21:00 y domingos de 9:00 a 14:00." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7.5 5.5h3v13h-3zM13.5 5.5h3v13h-3z" fill="currentColor"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M5 11V9.5A3.5 3.5 0 0 1 8.5 6H18m-3-3 3 3-3 3M19 13v1.5a3.5 3.5 0 0 1-3.5 3.5H6m3 3-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mirror" viewBox="0 0 24 24"><path d="M12 3v18M9 7 4 17h5zM15 7l5 10h-5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1 1 8.4 18.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 40 40"><path d="M13 14.5a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M9 25.5C9 18.6 14 14 20 14s11 4.6 11 11.5c0 3-1.2 5.6-3 7.5H12c-1.8-1.9-3-4.5-3-7.5z" fill="currentColor"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" data-header>
+    <div class="concept-bar">
+      <div class="wrap concept-bar__inner">
+        <p><span class="concept-bar__tag">Concepto</span> Gimnasio ficticio<span class="hide-s">: ejemplo de web interactiva 3D diseñada por Daniel Durán</span>.</p>
+        <a href="https://danielduranmoya-spec.github.io/#contacto">Quiero una web así <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="wrap site-header__inner">
+      <a class="logo" href="#inicio" aria-label="HIERRO 06, ir al inicio">
+        <svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="logo__word">HIERRO<b>06</b></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#club">El club</a>
+        <a href="#clase">Clase 3D</a>
+        <a href="#horario">Horario</a>
+        <a href="#tarifas">Tarifas</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn--volt btn--small header__cta" href="#tarifas">7 días gratis</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-movil" data-menu-toggle>
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="menu-movil" data-menu hidden>
+      <nav aria-label="Menú móvil">
+        <a href="#club"><span>01</span> El club</a>
+        <a href="#clase"><span>02</span> Clase 3D</a>
+        <a href="#horario"><span>03</span> Horario</a>
+        <a href="#tarifas"><span>04</span> Tarifas</a>
+        <a href="#tienda"><span>05</span> Tienda</a>
+        <a href="#contacto"><span>06</span> Contacto</a>
+      </nav>
+      <a class="btn btn--volt" href="#tarifas">Prueba 7 días gratis</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ===================== INICIO: SLAM DUNK ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title" data-hero>
+      <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+      <div class="hero__flash" aria-hidden="true"></div>
+      <p class="hero__ghost" aria-hidden="true">06</p>
+
+      <!-- Si no hay WebGL, una kettlebell dibujada cae igual -->
+      <div class="hero__fallback" aria-hidden="true">
+        <svg viewBox="0 0 200 220">
+          <path d="M62 78a38 38 0 0 1 76 0" fill="none" stroke="#2a2c2f" stroke-width="18" stroke-linecap="round"/>
+          <path d="M28 140c0-44 32-72 72-72s72 28 72 72c0 22-9 44-24 62H52c-15-18-24-40-24-62z" fill="#16171a"/>
+          <text x="100" y="160" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="900" font-size="54" fill="#C6F432">24</text>
+        </svg>
+      </div>
+
+      <div class="wrap hero__inner">
+        <p class="eyebrow">Club de fuerza · Mérida (Badajoz)</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="slam-line" data-slam>Levanta</span>
+          <span class="slam-line slam-line--volt" data-slam>Mérida.</span>
+        </h1>
+        <p class="hero__lead">1.100&nbsp;m² de hierro junto al Guadiana. Kettlebells, halterofilia y coaches que corrigen cada repetición, de 6:30 a 23:00.</p>
+        <div class="hero__cta">
+          <a class="btn btn--volt btn--big" href="#tarifas">Prueba 7 días gratis <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--big" href="#clase"><svg aria-hidden="true"><use href="#i-play"/></svg> Ver la clase 3D</a>
+        </div>
+        <button class="hero__again" type="button" data-again><svg aria-hidden="true"><use href="#i-drop"/></svg> Soltar otra vez</button>
+      </div>
+      <div class="hero__spot" data-hero-spot aria-hidden="true"></div>
+
+      <dl class="hero__stats wrap">
+        <div><dt>m² de sala</dt><dd><span data-count="1100">1.100</span></dd></div>
+        <div><dt>kettlebells</dt><dd><span data-count="42">42</span></dd></div>
+        <div><dt>plataformas</dt><dd><span data-count="6">6</span></dd></div>
+        <div><dt>abrimos a las</dt><dd>6:30</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===================== EL CLUB ===================== -->
+    <section class="club section" id="club" aria-labelledby="club-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">01 · El club</p>
+          <h2 class="section__title" id="club-title">Cuatro zonas.<br>Ni una máquina de más.</h2>
+          <p class="section__lead">Nada de pasillos de máquinas que nadie usa. En HIERRO 06 hay hierro libre, sitio para moverlo y alguien que te mira la técnica.</p>
+        </header>
+        <ol class="zonas">
+          <li class="zona" data-reveal>
+            <span class="zona__num">01</span>
+            <h3>Plataformas</h3>
+            <p>Seis plataformas de madera con barras olímpicas, discos de goma y cajones de tirón. Aquí se entrena arrancada, cargada y peso muerto.</p>
+            <p class="zona__dato">6 plataformas · 2 barras de 15 kg por plataforma</p>
+          </li>
+          <li class="zona" data-reveal>
+            <span class="zona__num">02</span>
+            <h3>Kettlebell</h3>
+            <p>42 kettlebells de competición de 8 a 32 kg, todas del mismo tamaño. Cambia el peso, no la técnica.</p>
+            <p class="zona__dato">De 8 a 32 kg · código de color IKSFA</p>
+          </li>
+          <li class="zona" data-reveal>
+            <span class="zona__num">03</span>
+            <h3>Racks</h3>
+            <p>Ocho jaulas de potencia con barras de sentadilla, banco regulable y poleas. Hay pinzas, cinturones y tiza para todo el mundo.</p>
+            <p class="zona__dato">8 racks · cadenas y bandas de resistencia</p>
+          </li>
+          <li class="zona" data-reveal>
+            <span class="zona__num">04</span>
+            <h3>Movilidad</h3>
+            <p>Sala con césped, trineos, rodillos y una fisioterapeuta dos tardes por semana para que vuelvas mañana sin dolor.</p>
+            <p class="zona__dato">Fisio martes y jueves · 17:00–21:00</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== CLASE 3D (VÍDEO INTERACTIVO) ===================== -->
+    <section class="clase section" id="clase" aria-labelledby="clase-title">
+      <div class="wrap">
+        <header class="section__head section__head--row">
+          <div>
+            <p class="eyebrow">02 · Clase con Vulcano</p>
+            <h2 class="section__title" id="clase-title">Aprende la técnica antes de venir.</h2>
+          </div>
+          <p class="section__lead">Vulcano es nuestro coach 3D. Toca los consejos para parar el vídeo, ponlo a cámara lenta o repite un ejercicio en bucle.</p>
+        </header>
+
+        <div class="player" data-player>
+          <div class="player__screen">
+            <video class="player__video" data-video src="media/clase-vulcano.mp4" poster="media/clase-poster.jpg" muted playsinline preload="metadata" aria-label="Clase de kettlebell de 24 segundos: swing, sentadilla goblet y press"></video>
+            <div class="player__cues" data-cues aria-live="polite"></div>
+            <div class="player__hud">
+              <p class="player__chapter" data-chapter-name>Swing ruso</p>
+              <p class="player__reps"><span data-reps>0</span><small>reps</small></p>
+            </div>
+            <button class="player__big" type="button" data-play-big aria-label="Reproducir la clase"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+            <div class="player__tip" data-tip hidden>
+              <p class="player__tip-title" data-tip-title></p>
+              <p data-tip-text></p>
+              <button class="btn btn--volt btn--small" type="button" data-tip-close>Seguir</button>
+            </div>
+          </div>
+
+          <div class="player__bar">
+            <button class="icon-btn" type="button" data-play aria-label="Reproducir"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+            <div class="timeline" data-timeline role="slider" tabindex="0" aria-label="Posición del vídeo" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0">
+              <div class="timeline__fill" data-fill></div>
+              <div class="timeline__marks" data-marks></div>
+            </div>
+            <p class="player__time" data-time>0:00</p>
+          </div>
+
+          <div class="player__tools">
+            <div class="chips" role="group" aria-label="Ejercicios" data-chapters></div>
+            <div class="chips" role="group" aria-label="Velocidad">
+              <button class="chip is-on" type="button" data-speed="1">1×</button>
+              <button class="chip" type="button" data-speed="0.5">0,5×</button>
+              <button class="chip" type="button" data-speed="0.25">Cámara lenta</button>
+            </div>
+            <div class="chips" role="group" aria-label="Opciones">
+              <button class="chip" type="button" data-loop aria-pressed="false"><svg aria-hidden="true"><use href="#i-loop"/></svg> Repetir ejercicio</button>
+              <button class="chip" type="button" data-mirror aria-pressed="false"><svg aria-hidden="true"><use href="#i-mirror"/></svg> Espejo</button>
+              <button class="chip" type="button" data-full><svg aria-hidden="true"><use href="#i-full"/></svg> <span class="sr-only">Pantalla completa</span></button>
+            </div>
+          </div>
+          <p class="player__keys">Teclado: <kbd>espacio</kbd> pausa · <kbd>←</kbd> <kbd>→</kbd> 2 s · <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> ejercicios</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HORARIO ===================== -->
+    <section class="horario section section--tiza" id="horario" aria-labelledby="horario-title">
+      <div class="wrap">
+        <header class="section__head section__head--row">
+          <div>
+            <p class="eyebrow">03 · Horario de clases</p>
+            <h2 class="section__title" id="horario-title">Grupos de seis.<br>Plaza en un toque.</h2>
+          </div>
+          <p class="section__lead">Elige el día y el tipo de clase. Al tocar una clase se abre WhatsApp con la reserva escrita.</p>
+        </header>
+        <div class="horario__filtros">
+          <div class="dias" role="tablist" aria-label="Día de la semana" data-dias></div>
+          <div class="chips" role="group" aria-label="Tipo de clase" data-tipos></div>
+        </div>
+        <ul class="clases" data-clases aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== CALCULADORA ===================== -->
+    <section class="rm section" id="calculadora" aria-labelledby="rm-title">
+      <div class="wrap rm__grid">
+        <header class="section__head">
+          <p class="eyebrow">04 · Calculadora</p>
+          <h2 class="section__title" id="rm-title">¿Cuánto levantas de verdad?</h2>
+          <p class="section__lead">Pon un peso y cuántas repeticiones haces con él. Calculamos tu máximo a una repetición (1RM) y los pesos para cada objetivo.</p>
+          <form class="rm__form" data-rm>
+            <label>Peso<span><input type="number" inputmode="decimal" min="1" max="400" step="0.5" value="60" name="peso" required> kg</span></label>
+            <label>Repeticiones<span><input type="number" inputmode="numeric" min="1" max="12" step="1" value="5" name="reps" required></span></label>
+          </form>
+          <p class="rm__nota">Fórmula de Epley. Es una estimación: el día del test, con un coach al lado.</p>
+        </header>
+        <div class="rm__out">
+          <p class="rm__label">Tu 1RM estimado</p>
+          <p class="rm__valor"><span data-rm-valor>70</span><small>kg</small></p>
+          <ul class="rm__tabla" data-rm-tabla></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TARIFAS ===================== -->
+    <section class="tarifas section section--tiza" id="tarifas" aria-labelledby="tarifas-title">
+      <div class="wrap">
+        <header class="section__head section__head--center">
+          <p class="eyebrow">05 · Tarifas</p>
+          <h2 class="section__title" id="tarifas-title">Sin matrícula. Sin permanencia.</h2>
+          <div class="periodo" role="radiogroup" aria-label="Forma de pago" data-periodo>
+            <button type="button" role="radio" aria-checked="true" data-meses="1">Mensual</button>
+            <button type="button" role="radio" aria-checked="false" data-meses="3">Trimestral <em>−10 %</em></button>
+            <button type="button" role="radio" aria-checked="false" data-meses="12">Anual <em>−20 %</em></button>
+          </div>
+        </header>
+        <div class="planes">
+          <article class="plan" data-plan="Acceso" data-precio="34">
+            <h3>Acceso</h3>
+            <p class="plan__precio"><span data-precio-mes>34</span> €<small>/mes</small></p>
+            <p class="plan__total" data-total>&nbsp;</p>
+            <ul>
+              <li>Sala libre de 6:30 a 23:00</li>
+              <li>Valoración inicial con coach</li>
+              <li>Rutina en la app del club</li>
+            </ul>
+            <a class="btn btn--line" href="#" data-plan-cta>Empezar 7 días gratis</a>
+          </article>
+          <article class="plan plan--top" data-plan="Hierro" data-precio="54">
+            <p class="plan__badge">El más elegido</p>
+            <h3>Hierro</h3>
+            <p class="plan__precio"><span data-precio-mes>54</span> €<small>/mes</small></p>
+            <p class="plan__total" data-total>&nbsp;</p>
+            <ul>
+              <li>Todo lo de Acceso</li>
+              <li>Clases ilimitadas en grupos de 6</li>
+              <li>Revisión de técnica cada mes</li>
+              <li>Taquilla fija y toalla</li>
+            </ul>
+            <a class="btn btn--volt" href="#" data-plan-cta>Empezar 7 días gratis</a>
+          </article>
+          <article class="plan" data-plan="Coach 1:1" data-precio="129">
+            <h3>Coach 1:1</h3>
+            <p class="plan__precio"><span data-precio-mes>129</span> €<small>/mes</small></p>
+            <p class="plan__total" data-total>&nbsp;</p>
+            <ul>
+              <li>Todo lo de Hierro</li>
+              <li>8 sesiones personales al mes</li>
+              <li>Plan de alimentación básico</li>
+              <li>Test de fuerza trimestral</li>
+            </ul>
+            <a class="btn btn--line" href="#" data-plan-cta>Hablar con un coach</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TIENDA 3D ===================== -->
+    <section class="tienda section" id="tienda" aria-labelledby="tienda-title">
+      <div class="wrap tienda__grid">
+        <div class="tienda__stage" data-tienda-stage>
+          <canvas class="tienda__canvas" data-tienda-canvas aria-label="Kettlebell 3D. Arrastra para girarla." role="img"></canvas>
+          <div class="tienda__fallback" aria-hidden="true"><span data-fb-kg>16</span></div>
+          <p class="tienda__hint">Arrastra para girarla</p>
+        </div>
+        <div class="tienda__info">
+          <p class="eyebrow">06 · Tienda del club</p>
+          <h2 class="section__title" id="tienda-title">Tu primera kettlebell.</h2>
+          <p class="section__lead">Las de competición miden lo mismo pese lo que pesen: cambia el color, no la técnica. Las de hierro fundido crecen con el peso.</p>
+
+          <div class="chips chips--acabado" role="radiogroup" aria-label="Tipo de kettlebell" data-acabado>
+            <button class="chip is-on" type="button" role="radio" aria-checked="true" data-tipo="competicion">Competición</button>
+            <button class="chip" type="button" role="radio" aria-checked="false" data-tipo="hierro">Hierro fundido</button>
+          </div>
+          <div class="pesos" role="radiogroup" aria-label="Peso" data-pesos></div>
+
+          <div class="tienda__ficha">
+            <p class="tienda__nombre" data-kb-nombre>Competición 16 kg · amarillo</p>
+            <p class="tienda__precio"><span data-kb-precio>69</span> €</p>
+          </div>
+          <p class="tienda__consejo" data-kb-consejo></p>
+          <a class="btn btn--volt btn--big" href="#" data-kb-cta><svg aria-hidden="true"><use href="#i-chat"/></svg> Reservar en recepción</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COACHES ===================== -->
+    <section class="coaches section" id="coaches" aria-labelledby="coaches-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">07 · Coaches</p>
+          <h2 class="section__title" id="coaches-title">Te corrigen a la tercera repetición, no a la décima.</h2>
+        </header>
+        <ul class="equipo">
+          <li class="coach" data-reveal>
+            <div class="coach__avatar" style="--c:#C6F432" aria-hidden="true">IG</div>
+            <h3>Irene Galván</h3>
+            <p class="coach__rol">Halterofilia y técnica</p>
+            <p>Lleva las plataformas. Si quieres aprender a arrancar, empieza los martes con ella.</p>
+          </li>
+          <li class="coach" data-reveal>
+            <div class="coach__avatar" style="--c:#FF3B47" aria-hidden="true">ML</div>
+            <h3>Marcos Lozano</h3>
+            <p class="coach__rol">Kettlebell y acondicionamiento</p>
+            <p>Diseñó la clase de Vulcano. Sus circuitos de 30 minutos tienen lista de espera.</p>
+          </li>
+          <li class="coach" data-reveal>
+            <div class="coach__avatar" style="--c:#F1F0EA" aria-hidden="true">NP</div>
+            <h3>Nuria Paredes</h3>
+            <p class="coach__rol">Movilidad y readaptación</p>
+            <p>Fisioterapeuta. Martes y jueves por la tarde en la sala de movilidad.</p>
+          </li>
+        </ul>
+        <p class="nota-ficticia">Nombres y personas ficticios: esta web es un concepto.</p>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq__grid">
+        <header class="section__head">
+          <p class="eyebrow">08 · Preguntas</p>
+          <h2 class="section__title" id="faq-title">Lo que nos preguntáis en recepción.</h2>
+        </header>
+        <div class="faq__list">
+          <details><summary>¿Puedo probar el gimnasio antes de apuntarme?</summary><p>Sí. Tienes 7 días gratis con acceso a sala y a todas las clases. Solo hay que reservar por WhatsApp y traer el DNI.</p></details>
+          <details><summary>Nunca he entrenado con kettlebell, ¿es para mí?</summary><p>Sí. La primera semana haces una valoración y dos clases de técnica en grupos de seis. Empiezas con 8 o 12 kg y subes cuando el coach lo vea.</p></details>
+          <details><summary>¿Hay permanencia o matrícula?</summary><p>No hay permanencia ni matrícula. Los pagos trimestral y anual tienen un 10 % y un 20 % de descuento.</p></details>
+          <details><summary>¿Dónde aparco?</summary><p>El club tiene 14 plazas para socios y hay aparcamiento libre en las calles de alrededor.</p></details>
+          <details><summary>¿Qué horario tiene HIERRO 06?</summary><p>De lunes a viernes de 6:30 a 23:00, sábados de 9:00 a 21:00 y domingos de 9:00 a 14:00.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="contacto section section--tiza" id="contacto" aria-labelledby="contacto-title">
+      <div class="wrap contacto__grid">
+        <div>
+          <p class="eyebrow">09 · Ven a entrenar</p>
+          <h2 class="section__title" id="contacto-title">Calle del Hierro, 6.<br>Mérida.</h2>
+          <p class="estado" data-estado>&nbsp;</p>
+          <dl class="datos">
+            <div><dt>Dirección</dt><dd>Calle del Hierro 6, 06800 Mérida (Badajoz)<br><small>Dirección ficticia</small></dd></div>
+            <div><dt>Teléfono</dt><dd><a href="tel:+34600000000">600 000 000</a></dd></div>
+            <div><dt>Lunes a viernes</dt><dd>6:30 – 23:00</dd></div>
+            <div><dt>Sábados</dt><dd>9:00 – 21:00</dd></div>
+            <div><dt>Domingos</dt><dd>9:00 – 14:00</dd></div>
+          </dl>
+          <form class="reserva" data-reserva>
+            <h3>Reserva tu semana gratis</h3>
+            <label>Nombre<input name="nombre" autocomplete="given-name" required maxlength="40"></label>
+            <label>Objetivo
+              <select name="objetivo">
+                <option>Ponerme fuerte</option>
+                <option>Aprender kettlebell</option>
+                <option>Halterofilia</option>
+                <option>Perder grasa</option>
+                <option>Volver tras una lesión</option>
+              </select>
+            </label>
+            <label>Franja
+              <select name="franja">
+                <option>Mañana (6:30–10:00)</option>
+                <option>Mediodía (13:00–16:00)</option>
+                <option>Tarde (17:00–21:00)</option>
+                <option>Noche (21:00–23:00)</option>
+              </select>
+            </label>
+            <button class="btn btn--dark btn--big" type="submit"><svg aria-hidden="true"><use href="#i-chat"/></svg> Enviar por WhatsApp</button>
+            <p class="reserva__nota">Se abre WhatsApp con el mensaje escrito. No guardamos nada en esta web.</p>
+          </form>
+        </div>
+        <div class="mapa" data-mapa>
+          <div class="mapa__placeholder">
+            <p>El mapa es de OpenStreetMap y solo se carga si lo pides.</p>
+            <button class="btn btn--dark" type="button" data-cargar-mapa>Cargar mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer__big" aria-hidden="true">HIERRO<b>06</b></p>
+      <div class="footer__row">
+        <p>© 2026 HIERRO 06 · Concepto de web para un gimnasio ficticio en Mérida.</p>
+        <p><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a> · <button class="linkish" type="button" data-cookies-open>Preferencias</button></p>
+        <p>Diseño y 3D: <a href="https://danielduranmoya-spec.github.io/">Daniel Durán</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookies" data-cookies hidden role="dialog" aria-labelledby="cookies-title" aria-live="polite">
+    <p id="cookies-title"><strong>Sin cookies de seguimiento.</strong> Solo guardamos tu elección en este navegador. El mapa de OpenStreetMap se carga si lo aceptas.</p>
+    <div class="cookies__btns">
+      <button class="btn btn--line btn--small" type="button" data-cookies="no">Solo necesarias</button>
+      <button class="btn btn--volt btn--small" type="button" data-cookies="si">Aceptar mapa</button>
+    </div>
+  </div>
+
+  <a class="wa-float" href="https://wa.me/34600000000" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#i-chat"/></svg></a>
+
+  <script src="script.js" defer></script>
+  <script type="module" src="escena.js"></script>
+</body>
+</html>
